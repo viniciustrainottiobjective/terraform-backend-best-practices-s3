@@ -1,0 +1,5 @@
+bucket         = "backend-infra-app-react-dev-bucket-s3-state"
+key            = "terraform.tfstate"
+region         = "us-east-1"
+profile        = "awspersonal"
+workspace_key_prefix = "application-react"
