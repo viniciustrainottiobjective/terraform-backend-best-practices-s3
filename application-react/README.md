@@ -1,7 +1,3 @@
-# Learn CircleCI with React Project
+# Application React
 
-This repository tends to present an applied example to Pipeline CI/CD with Github Actions.
-
-The default is execute this pattern:
-
-![pipeline](./imgs/pipeline.png "Pipeline")
+This is a simple application to demonstrate how to use the [React](https://reactjs.org/) framework.
