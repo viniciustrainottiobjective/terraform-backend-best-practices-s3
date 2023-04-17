@@ -10,7 +10,7 @@ resource "aws_s3_bucket_acl" "backend_infra" {
   acl    = "private"
 }
 
-resource "aws_s3_bucket_versioning" "bucket_versioning" {
+resource "aws_s3_bucket_versioning" "backend_infra" {
   bucket = aws_s3_bucket.backend_infra.id
   versioning_configuration {
     status = "Enabled"
@@ -30,7 +30,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "backend_infra" {
     dynamic "apply_server_side_encryption_by_default" {
       for_each = var.activate_kms ? [1] : []
       content {
-        kms_master_key_id = aws_kms_key.kms_s3_key[0].arn
+        kms_master_key_id = aws_kms_key.encrypt_state[0].arn
         sse_algorithm     = "aws:kms"
       }
     }
@@ -44,7 +44,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "backend_infra" {
 }
 
 resource "aws_s3_bucket_lifecycle_configuration" "backend_infra" {
-  depends_on = [aws_s3_bucket_versioning.bucket_versioning]
+  depends_on = [aws_s3_bucket_versioning.backend_infra]
   bucket = aws_s3_bucket.backend_infra.bucket
 
   rule {
