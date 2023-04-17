@@ -34,3 +34,5 @@ node_modules/
 *.zip
 tfplan.out
 plan.tfout
+
+backend-infra/environments/dev-application.tfvars
