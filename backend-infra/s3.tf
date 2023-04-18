@@ -51,7 +51,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "backend_infra" {
     id = "basic_config"
     status = "Enabled"
     filter {
-      prefix = "config/"
+      prefix = var.prefix_filter_s3
     }
     noncurrent_version_transition {
       noncurrent_days = 30

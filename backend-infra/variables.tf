@@ -34,3 +34,8 @@ variable "tags" {
     type        = map(string)
     default     = {}
 }
+variable "prefix_filter_s3" {
+    description = "Prefix filter for S3"
+    type        = string
+    default     = ""
+}

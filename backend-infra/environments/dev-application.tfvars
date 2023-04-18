@@ -12,3 +12,4 @@ tags = {
   "Project" = "backend-infra-app-react"
   "ManagedBy" = "Terraform"
 }
+prefix_filter_s3 = "application-react/"
